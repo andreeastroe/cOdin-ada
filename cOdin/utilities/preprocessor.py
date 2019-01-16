@@ -77,7 +77,6 @@ def writeDataFrameToCSV(data, filePath = "data.csv", cols = None, index = None):
         datadf.to_csv(path_or_buf=filePath)
         print("Data was saved to " + filePath)
 
-
 # not sure what it's used for
 def evaluate(C, alpha, R):
     n = np.shape(C)[0]
@@ -96,19 +95,6 @@ def evaluate(C, alpha, R):
     R2 = R * R
     common = np.cumsum(R2, axis=1)
     return S, q, beta, common
-
-
-def toTable(X, col_name=None, index_name=None, tabel=None):
-    X_tab = pd.DataFrame(X)
-    if col_name is not None:
-        X_tab.columns = col_name
-    if index_name is not None:
-        X_tab.index = index_name
-    if tabel is None:
-        X_tab.to_csv("tabel.csv")
-    else:
-        X_tab.to_csv(tabel)
-    return X_tab
 
 # Standardize the column (variable) values for a pandas.DataFrame - luat de la Vinte
 def standize(values):
@@ -145,7 +131,7 @@ def standardize(array):
                             parameters['stds'])
     return ary_newt[:, columns] # returns pandas.DataFrame, copy of the array or DataFrame with standardized columns
 
-
+# not sure what it's used for
 def inverse(data, y=None):
     if type(data) is pd.DataFrame:
         for col in data.columns:

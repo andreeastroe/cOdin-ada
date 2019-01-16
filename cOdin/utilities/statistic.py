@@ -1,3 +1,4 @@
+# provide functionality for running statistical tests (1 points);
 import numpy as np
 import scipy.stats as sts
 
