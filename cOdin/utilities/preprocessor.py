@@ -63,11 +63,52 @@ def readDataframeFromTXT(filePath, replaceNA = False):
         print("exit")
     return data
 
-# Writes a pandas.DataFrame to a .csv file
-def writeDataFrameToCSV(data, filePath = "data.csv"):
-    data.to_csv(path_or_buf = filePath)
-    print("Data was saved to " + filePath)
+# Writes a pandas.DataFrame or numpy.ndarray to a .csv file
+def writeDataFrameToCSV(data, filePath = "data.csv", cols = None, index = None):
+    if type(data) is pd.DataFrame:
+        data.to_csv(path_or_buf = filePath)
+        print("Data was saved to " + filePath)
+    else:
+        datadf = pd.DataFrame(data)
+        if cols is not None:    # if there is a specified ndarray with the columns, use it
+            datadf.columns = cols
+        if index is not None:   # if there is a specified ndarray with the index, use it
+            datadf.index = index
+        datadf.to_csv(path_or_buf=filePath)
+        print("Data was saved to " + filePath)
 
+
+# not sure what it's used for
+def evaluate(C, alpha, R):
+    n = np.shape(C)[0]
+    # Compute scores
+    S = C / np.sqrt(alpha)
+
+    # Compute cosines
+    C2 = C * C
+    suml = np.sum(C2, axis=1)
+    q = np.transpose(np.transpose(C2) / suml)
+
+    # Compute distributions
+    beta = C2 / (alpha * n)
+
+    # Compute commonalities
+    R2 = R * R
+    common = np.cumsum(R2, axis=1)
+    return S, q, beta, common
+
+
+def toTable(X, col_name=None, index_name=None, tabel=None):
+    X_tab = pd.DataFrame(X)
+    if col_name is not None:
+        X_tab.columns = col_name
+    if index_name is not None:
+        X_tab.index = index_name
+    if tabel is None:
+        X_tab.to_csv("tabel.csv")
+    else:
+        X_tab.to_csv(tabel)
+    return X_tab
 
 # Standardize the column (variable) values for a pandas.DataFrame - luat de la Vinte
 def standize(values):
@@ -75,7 +116,6 @@ def standize(values):
     stdandardDevs = np.std(values, axis = 0)    # computes standard deviations for the values in the columns
     Xstd = (values - averages) / stdandardDevs  # standardizes each value in the initial data input
     return Xstd
-
 
 # http://rasbt.github.io/mlxtend/user_guide/preprocessing/standardize/
 def standardize(array):
@@ -94,7 +134,7 @@ def standardize(array):
         raise AttributeError('Input array must be a pandas.DataFrame or numpy.ndarray')
 
     parameters = {'avgs': ary_newt[:, columns].mean(axis=0),
-                  'stds': ary_newt[:, columns].std(axis=0, ddof=ddof)}
+                  'stds': ary_newt[:, columns].std(axis=0, ddof=0)}
     are_constant = np.all(ary_newt[:, columns] == ary_newt[0, columns], axis=0)
     for c, b in zip(columns, are_constant):
         if b:
@@ -106,19 +146,47 @@ def standardize(array):
     return ary_newt[:, columns] # returns pandas.DataFrame, copy of the array or DataFrame with standardized columns
 
 
-def inverse(t, y=None):
-    if type(t) is pd.DataFrame:
-        for c in t.columns:
-            minim = t[c].min();
-            maxim = t[c].max()
+def inverse(data, y=None):
+    if type(data) is pd.DataFrame:
+        for col in data.columns:
+            minim = data[col].min()
+            maxim = data[col].max()
             if abs(minim) > abs(maxim):
-                t[c] = -t[c]
-                if y is not None:
-                    k = t.columns.get_loc(c)
-                    y[:, k] = -y[:, k]
+                data[col] = -data[col]
+             #   if y is not None:
+              #      k = t.columns.get_loc(c)
+               #     y[:, k] = -y[:, k]
     else:
-        for i in range(np.shape(t)[1]):
-            minim = np.min(t[:, i]);
-            maxim = np.max(t[:, i])
+        for i in range(np.shape(data)[1]):
+            minim = np.min(data[:, i])
+            maxim = np.max(data[:, i])
             if np.abs(minim) > np.abs(maxim):
-                t[:, i] = -t[:, i]
+                data[:, i] = -data[:, i]
+
+# Centers a given matrix using the mean. Receives Dataframe or ndarray
+def meanCenter(data):
+    if type(data) is pd.DataFrame: # if it is a DataFrame, we convert it to ndarray
+        values = data.values
+    else:
+        values = data
+    meanValues = values.mean(axis=0)
+    values -= meanValues
+    return values
+
+# Calculates the inverse of a given matrix. Receives Dataframe or ndarray
+def inverse(data):
+    if type(data) is pd.DataFrame:  # if it is a DataFrame, we convert it to ndarray
+        values = data.values
+    else:
+        values = data
+    inverseValues = np.linalg.inv(values)
+    return inverseValues
+
+# Calculates the inverse of a given matrix. Receives Dataframe or ndarray
+def transpose(data):
+    if type(data) is pd.DataFrame:  # if it is a DataFrame, we convert it to ndarray
+        values = data.values
+    else:
+        values = data
+    transposeValues = np.transpose(values)
+    return transposeValues
