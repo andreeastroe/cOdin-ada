@@ -50,3 +50,15 @@ class ada:
 
             # Show the eigenvalues graphic
             vis.eighenValues(alpha)
+        elif self.method == "EFA":
+            self.EFA = efa.EFA(self.data)
+            # do shit
+        elif self.method == "CCA":
+            self.CCA = cca.CCA(self.data)
+            # do shit
+        elif self.method == "LDA":
+            self.LDA = lda.LDA(self.data)
+            # do shit
+        else: # self.method == "HCA"
+            self.HCA = hca.HCA(self.data)
+            # do shit
