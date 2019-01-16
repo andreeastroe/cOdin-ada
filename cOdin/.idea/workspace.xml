@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cb3a856d-1ebd-4fe4-abb8-a4986f3c425f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ada.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cOdin-case-study.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/analysisMethods/PCA.py" beforeDir="false" afterPath="$PROJECT_DIR$/analysisMethods/PCA.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api.py" beforeDir="false" />
-    </list>
+    <list default="true" id="cb3a856d-1ebd-4fe4-abb8-a4986f3c425f" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,49 +10,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/analysisMethods/PCA.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="26" />
-              <folding>
-                <element signature="e#55#74#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ada.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="79" selection-start-line="9" selection-start-column="79" selection-end-line="9" selection-end-column="79" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/cOdin-case-study.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="125" selection-start-column="125" selection-end-column="125" />
+            <state relative-caret-position="425">
+              <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utilities/statistic.py">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="19" column="36" lean-forward="true" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utilities/preprocessor.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-85">
-              <caret line="30" selection-start-line="30" selection-end-line="30" />
+              <caret line="99" column="8" lean-forward="true" selection-start-line="99" selection-start-column="8" selection-end-line="99" selection-end-column="8" />
               <folding>
                 <element signature="e#204#223#0" expanded="true" />
                 <element signature="e#388#642#0" />
@@ -69,6 +42,9 @@
                 <element signature="e#3710#4215#0" />
                 <element signature="e#4278#4624#0" />
                 <element signature="e#5144#6177#0" />
+                <element signature="e#6892#7112#0" />
+                <element signature="e#7211#7419#0" />
+                <element signature="e#7520#7731#0" />
               </folding>
             </state>
           </provider>
@@ -195,13 +171,13 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.46889225" />
+      <window_info content_ui="combo" id="Project" order="1" weight="0.36418816" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="2" />
       <window_info anchor="bottom" id="Message" order="3" />
-      <window_info anchor="bottom" id="Find" order="4" />
+      <window_info anchor="bottom" id="Find" order="4" weight="0.3289689" />
       <window_info anchor="bottom" id="Version Control" order="5" />
       <window_info anchor="bottom" id="Run" order="6" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
@@ -214,13 +190,13 @@
     </layout>
     <layout-to-restore>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.46889225" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.36418816" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="2" />
       <window_info anchor="bottom" id="Message" order="3" />
-      <window_info anchor="bottom" id="Find" order="4" />
+      <window_info anchor="bottom" id="Find" order="4" weight="0.3289689" />
       <window_info anchor="bottom" id="Version Control" order="5" />
       <window_info anchor="bottom" id="Run" order="6" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
@@ -266,36 +242,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utilities/statistic.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utilities/preprocessor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-85">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
-          <folding>
-            <element signature="e#204#223#0" expanded="true" />
-            <element signature="e#388#642#0" />
-            <element signature="e#781#1431#0" />
-            <element signature="e#1544#2526#0" />
-            <element signature="e#2639#3563#0" />
-            <element signature="e#3710#4215#0" />
-            <element signature="e#4278#4624#0" />
-            <element signature="e#5144#6177#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/analysisMethods/PCA.py">
+    <entry file="file://$PROJECT_DIR$/cOdin-case-study.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="26" />
-          <folding>
-            <element signature="e#55#74#0" expanded="true" />
-          </folding>
+        <state>
+          <caret column="125" selection-start-column="125" selection-end-column="125" />
         </state>
       </provider>
     </entry>
@@ -309,10 +262,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cOdin-case-study.py">
+    <entry file="file://$PROJECT_DIR$/utilities/statistic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="125" selection-start-column="125" selection-end-column="125" />
+        <state relative-caret-position="306">
+          <caret line="19" column="36" lean-forward="true" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utilities/preprocessor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-85">
+          <caret line="99" column="8" lean-forward="true" selection-start-line="99" selection-start-column="8" selection-end-line="99" selection-end-column="8" />
+          <folding>
+            <element signature="e#204#223#0" expanded="true" />
+            <element signature="e#388#642#0" />
+            <element signature="e#781#1431#0" />
+            <element signature="e#1544#2526#0" />
+            <element signature="e#2639#3563#0" />
+            <element signature="e#3710#4215#0" />
+            <element signature="e#4278#4624#0" />
+            <element signature="e#5144#6177#0" />
+            <element signature="e#6892#7112#0" />
+            <element signature="e#7211#7419#0" />
+            <element signature="e#7520#7731#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analysisMethods/PCA.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
         </state>
       </provider>
     </entry>

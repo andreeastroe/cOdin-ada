@@ -20,6 +20,7 @@ class PCA:
         ev_list = zip(self.eigenVal, self.eigenVect)
         ev_list.sort(key=lambda tup: tup[0], reverse=True)
         self.alpha, self.a = zip(*ev_list)
+        pp.inverse(self.a)
 
         # Compute the correlation factors
         self.Rxc = self.a * np.sqrt(self.alpha)

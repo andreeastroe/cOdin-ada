@@ -131,17 +131,14 @@ def standardize(array):
                             parameters['stds'])
     return ary_newt[:, columns] # returns pandas.DataFrame, copy of the array or DataFrame with standardized columns
 
-# not sure what it's used for
-def inverse(data, y=None):
+# used in pca
+def inverse(data):
     if type(data) is pd.DataFrame:
         for col in data.columns:
             minim = data[col].min()
             maxim = data[col].max()
             if abs(minim) > abs(maxim):
                 data[col] = -data[col]
-             #   if y is not None:
-              #      k = t.columns.get_loc(c)
-               #     y[:, k] = -y[:, k]
     else:
         for i in range(np.shape(data)[1]):
             minim = np.min(data[:, i])
