@@ -9,8 +9,10 @@ import pandas as pd
 
 class ada:
 
-    def __init__(self, filePath, method = ""):
+    def __init__(self, filePath, filePath2 = None, method = ""):
         self.data = pp.readDataframeFromCSV(filePath, replaceNA = True)
+        if filePath2 is not None:
+            self.data2 = pp.readDataframeFromCSV(filePath2, replaceNA=True)
         self.method = method
 
         # si aici apelam mai departe clasa din alea 5 care corespunde cu method
@@ -27,7 +29,7 @@ class ada:
 
             # def writeDataFrameToCSV(data, filePath="data.csv", cols=None, index=None):
 
-            # Save the processed table
+            # Save the processed data
             dataTab = pd.DataFrame(data=self.data, columns=var_name, index=obs_name)
             pp.writeDataFrameToCSV(dataTab, filePath = "data.csv")
 
