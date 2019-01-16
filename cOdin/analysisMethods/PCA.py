@@ -26,7 +26,7 @@ class PCA:
         self.Rxc = self.a * np.sqrt(self.alpha)
 
         # Compute the principal components for standardized X
-        self.Xstd = pp.standize(X)
+        self.Xstd = pp.standardize2(X)
         self.C = self.Xstd @ self.a
 
     # Return the correlation matrix of the initial (causal) variables

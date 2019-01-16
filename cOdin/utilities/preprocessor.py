@@ -40,6 +40,12 @@ def readDataframeFromCSV(filePath, replaceNA = False):
             replaceNAValues(values)
             data[var_name].values = values  #sets back the cleaned values in the data variable
 
+        print("Initial dataset: \n" + data)
+
+        n = data.shape[0]  # number of observation
+        m = data.shape[1]  # number of variables
+        print("Contains " + n + " observations and " + m + " variables.")
+
     except pd.errors.EmptyDataError: #Exception that is thrown in pd.read_csv (by both the C and Python engines) when empty data or header is encountered.
         print("File not found or path is incorrect. Make sure it is a .csv file and exists at the specified destination. ")
     finally:
@@ -67,7 +73,7 @@ def readDataframeFromTXT(filePath, replaceNA = False):
 def writeDataFrameToCSV(data, filePath = "data.csv", cols = None, index = None):
     if type(data) is pd.DataFrame:
         data.to_csv(path_or_buf = filePath)
-        print("Data was saved to " + filePath)
+        print("Data successfully saved to " + filePath)
     else:
         datadf = pd.DataFrame(data)
         if cols is not None:    # if there is a specified ndarray with the columns, use it
@@ -75,7 +81,7 @@ def writeDataFrameToCSV(data, filePath = "data.csv", cols = None, index = None):
         if index is not None:   # if there is a specified ndarray with the index, use it
             datadf.index = index
         datadf.to_csv(path_or_buf=filePath)
-        print("Data was saved to " + filePath)
+        print("Data successfully saved to " + filePath)
 
 # not sure what it's used for
 def evaluate(C, alpha, R):
@@ -97,7 +103,7 @@ def evaluate(C, alpha, R):
     return S, q, beta, common
 
 # Standardize the column (variable) values for a pandas.DataFrame - luat de la Vinte
-def standize(values):
+def standardize2(values):
     averages = np.mean(values, axis = 0 )   # computes average values for the columns
     stdandardDevs = np.std(values, axis = 0)    # computes standard deviations for the values in the columns
     Xstd = (values - averages) / stdandardDevs  # standardizes each value in the initial data input
