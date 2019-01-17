@@ -9,12 +9,13 @@ import pandas as pd
 
 class ADA:
 
-    def __init__(self, filePath, filePath2 = None, method = "", index_col =1):
+    def __init__(self, filePath, filePath2 = "", method = "", index_col =1):
         if method != "HCA":
-            self.data = pp.readDataframeFromCSV(filePath, replaceNA = True)
+            self.data = pd.read_csv("Teritorial.csv", index_col=1)
+            # self.data = pp.readDataframeFromCSV(filePath, replaceNA = True)
         else:
             self.data = pp.readDataframeFromCSV(filePath, replaceNA=True, index_col = 0)
-        if filePath2 is not None:
+        if filePath2 != "":
             self.data2 = pp.readDataframeFromCSV(filePath2, replaceNA=True)
         self.method = method
 
@@ -46,7 +47,7 @@ class ADA:
             # Save the correlation factors
             m = self.data.shape[1]  # number of variables
             correlFactors = pd.DataFrame(Rxc, index=var_name, columns=
-            ["C" + str(k + 1) for k in range(m)])
+            ["C" + str(k + 1) for k in range(m-1)])
             pp.writeDataFrameToCSV(correlFactors, filePath="CorrelationFactors.csv")
 
             # Show factors correlogram

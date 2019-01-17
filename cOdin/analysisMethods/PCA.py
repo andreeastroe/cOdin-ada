@@ -13,15 +13,18 @@ class PCA:
             X = values
         self.X = X
 
-        print("Reached PCA")
         self.R = np.corrcoef(self.X, rowvar=False)  # Compute the correlation matrix
         self.eigenVal, self.eigenVect = np.linalg.eigh(self.R)
 
         # Sort the eigenvalues and the corresponding eigenvectors in descending order
-        ev_list = zip(self.eigenVal, self.eigenVect)
-        ev_list.sort(key=lambda tup: tup[0], reverse=True)
-        self.alpha, self.a = zip(*ev_list)
-        pp.inverse(self.a)
+        k_reverse = [k for k in reversed(np.argsort(self.eigenVal))]
+        self.alpha = self.eigenVal[k_reverse]
+        self.a = self.eigenVect[:, k_reverse]
+        for i in range(len(self.alpha)):
+            minim = np.min(self.a[:, i])
+            maxim = np.max(self.a[:, i])
+            if np.abs(minim) > np.abs(maxim):
+                self.a[:, i] = -self.a[:, i]
 
         # Compute the correlation factors
         self.Rxc = self.a * np.sqrt(self.alpha)
