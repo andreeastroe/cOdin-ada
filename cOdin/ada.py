@@ -57,7 +57,14 @@ class ada:
             # do shit
         elif self.method == "CCA":
             self.CCA = cca.CCA(self.data)
-            # do shit
+            pp.writeDataFrameToCSV(self.cca.set1, "Set1.csv")
+            pp.writeDataFrameToCSV(self.cca.set2, "Set2.csv")
+            pp.writeDataFrameToCSV(self.cca.x_loadings_, "Set1FactorLoadings.csv")
+            pp.writeDataFrameToCSV(self.cca.y_loadings_, "Set2FactorLoadings.csv")
+            print("Chi square computed table: ", self.cca.chi2_computed_table)
+            vis.correlogram(self.cca.hi2_computed_table, title = "Bartlett-Wilks significance test")
+            print("Chi square estimated table: ", self.cca.chi2_estimated_table)
+            vis.correlogram(self.cca.chi2_estimated_table, title = "Bartlett-Wilks significance test")
         elif self.method == "LDA":
             self.LDA = lda.LDA(self.data, self.data2)
             pp.writeDataFrameToCSV(self.LDA.getTableClassificationBErr(), "BClassificationError.csv")
