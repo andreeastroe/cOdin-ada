@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb3a856d-1ebd-4fe4-abb8-a4986f3c425f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ada.py" beforeDir="false" afterPath="$PROJECT_DIR$/ada.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/analysisMethods/PCA.py" beforeDir="false" afterPath="$PROJECT_DIR$/analysisMethods/PCA.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysisMethods/CCA.py" beforeDir="false" afterPath="$PROJECT_DIR$/analysisMethods/CCA.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysisMethods/EFA.py" beforeDir="false" afterPath="$PROJECT_DIR$/analysisMethods/EFA.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cOdin-case-study.py" beforeDir="false" afterPath="$PROJECT_DIR$/cOdin-case-study.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/Teritorial.csv" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,11 +25,47 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cOdin-case-study.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+            <state relative-caret-position="306">
+              <caret line="18" column="34" lean-forward="true" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/analysisMethods/LDA.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="16" column="51" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="51" />
+              <folding>
+                <element signature="e#56#75#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/analysisMethods/CCA.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1411">
+              <caret line="92" column="40" lean-forward="true" selection-start-line="92" selection-start-column="40" selection-end-line="92" selection-end-column="40" />
+              <folding>
+                <element signature="e#57#76#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/analysisMethods/EFA.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="31" column="31" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
+              <folding>
+                <element signature="e#64#83#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -42,13 +79,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ada.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="49" column="48" selection-start-line="49" selection-start-column="48" selection-end-line="49" selection-end-column="48" />
+            <state relative-caret-position="222">
+              <caret line="19" column="28" lean-forward="true" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
+                <element signature="e#812#2268#0" />
+                <element signature="e#2393#3020#0" />
+                <element signature="e#3068#3751#0" />
               </folding>
             </state>
           </provider>
@@ -91,14 +131,14 @@
         <option value="$PROJECT_DIR$/utilities/statistic.py" />
         <option value="$PROJECT_DIR$/api.py" />
         <option value="$PROJECT_DIR$/analysisMethods/LDA.py" />
-        <option value="$PROJECT_DIR$/analysisMethods/CCA.py" />
         <option value="$PROJECT_DIR$/utilities/visual.py" />
-        <option value="$PROJECT_DIR$/analysisMethods/EFA.py" />
         <option value="$PROJECT_DIR$/analysisMethods/HCA.py" />
         <option value="$PROJECT_DIR$/utilities/preprocessor.py" />
         <option value="$PROJECT_DIR$/analysisMethods/PCA.py" />
-        <option value="$PROJECT_DIR$/ada.py" />
+        <option value="$PROJECT_DIR$/analysisMethods/EFA.py" />
+        <option value="$PROJECT_DIR$/analysisMethods/CCA.py" />
         <option value="$PROJECT_DIR$/cOdin-case-study.py" />
+        <option value="$PROJECT_DIR$/ada.py" />
       </list>
     </option>
   </component>
@@ -120,6 +160,16 @@
             <path>
               <item name="cOdin" type="b2602c69:ProjectViewProjectNode" />
               <item name="cOdin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cOdin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cOdin" type="462c0819:PsiDirectoryNode" />
+              <item name="analysisMethods" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cOdin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cOdin" type="462c0819:PsiDirectoryNode" />
+              <item name="datasets" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -184,7 +234,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" weight="0.57056147" />
+      <window_info content_ui="combo" id="Project" order="1" weight="0.56845236" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
@@ -193,7 +243,7 @@
       <window_info anchor="bottom" id="Find" order="4" weight="0.32405892" />
       <window_info anchor="bottom" id="Version Control" order="5" />
       <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.3289689" />
-      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="10" />
@@ -226,33 +276,6 @@
             <element signature="e#5338#5932#0" />
             <element signature="e#5899#6340#0" />
             <element signature="e#6435#6658#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/analysisMethods/CCA.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="62" lean-forward="true" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="62" />
-          <folding>
-            <element signature="e#57#76#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/analysisMethods/EFA.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="19" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/analysisMethods/LDA.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="51" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="51" />
-          <folding>
-            <element signature="e#56#75#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -290,20 +313,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ada.py">
+    <entry file="file://$PROJECT_DIR$/analysisMethods/EFA.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="49" column="48" selection-start-line="49" selection-start-column="48" selection-end-line="49" selection-end-column="48" />
+          <caret line="31" column="31" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#64#83#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analysisMethods/CCA.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1411">
+          <caret line="92" column="40" lean-forward="true" selection-start-line="92" selection-start-column="40" selection-end-line="92" selection-end-column="40" />
+          <folding>
+            <element signature="e#57#76#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analysisMethods/LDA.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="16" column="51" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="51" />
+          <folding>
+            <element signature="e#56#75#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cOdin-case-study.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+        <state relative-caret-position="306">
+          <caret line="18" column="34" lean-forward="true" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ada.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="19" column="28" lean-forward="true" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#812#2268#0" />
+            <element signature="e#2393#3020#0" />
+            <element signature="e#3068#3751#0" />
+          </folding>
         </state>
       </provider>
     </entry>

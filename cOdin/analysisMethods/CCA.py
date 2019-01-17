@@ -4,6 +4,7 @@ import numpy as np
 import utilities.visual as vis
 import sklearn.cross_decomposition as skl
 import utilities.preprocessor as pp
+import utilities.statistic as st
 
 
 class CCA:
@@ -12,9 +13,10 @@ class CCA:
     def __init__(self, X):
         self.X = X
 
-        x = input("Enter delimiting index between datasets: ")
-        if not isinstance(x, int):
+        aux = input("Enter delimiting index between datasets: ")
+        if not isinstance(int(aux), int):
             raise ValueError('Please input only integer values.')
+        x=int(aux)
 
         columns = X.columns[1:]
         set1_columns = columns[:x]
@@ -42,7 +44,7 @@ class CCA:
         # Compute the canonical correlation coefficients
         self.correlCoeffs = np.array([np.corrcoef(self.x_scores[:, i], self.y_scores[:, i], rowvar=False)[0, 1] for i in range(self.noComponents)])
 
-        chi2_computed, chi2_estimated = pp.bartlett_wilks(self.correlCoeffs, n, m, p, self.noComponents)
+        chi2_computed, chi2_estimated = st.bartlett_wilks(self.correlCoeffs, n, m, p, self.noComponents)
 
         self.chi2_computed_table = pd.DataFrame(chi2_computed, index=['r' + str(i) for i in range(1, self.noComponents + 1)], columns=['chi2_computed'])
         vis.correlogram(self.chi2_computed_table, "Bartlett-Wilks significance test", 0) # get in ada

@@ -20,7 +20,7 @@ class EFA:
         self.scores, q, beta, communalities = pp.evaluate(PC, correl, alpha)
         self.Bartlett_test = fa.calculate_bartlett_sphericity(pd.DataFrame(self.X, index=index, columns=columns))    # compute Bartlett test
         self.KMO_test = fa.calculate_kmo(pd.DataFrame(self.X, index=index, columns=columns))  # compute Kaiser, Meyer, Olkin test as a measure of sampling adequacy
-        if self.KMO_test[1] < threshold:
+        if self.KMO_test[1] < float(threshold):
             print("No significant factor found!")
             exit(1)
 
