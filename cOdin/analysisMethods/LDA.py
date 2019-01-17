@@ -1,11 +1,11 @@
-# class for holding a Principal Component(PCA) problem
+# class for holding a Linear Discriminant (LDA) problem
 import pandas as pd
 import numpy as np
 import sklearn.discriminant_analysis as disc
 import utilities.preprocessor as pp
 
 
-class PCA:
+class LDA:
 
     # Initializer / Instance Attributes
     def __init__(self, X, Y): # X, Y are DataFrames

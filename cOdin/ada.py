@@ -15,7 +15,7 @@ class ada:
             self.data2 = pp.readDataframeFromCSV(filePath2, replaceNA=True)
         self.method = method
 
-        # si aici apelam mai departe clasa din alea 5 care corespunde cu method
+        # instantiate a data analysis method class according to the method parameter
         if self.method == "PCA":
             self.PCA = pca.PCA(self.data)
             R = self.PCA.getCorrelation()
