@@ -7,9 +7,9 @@ import analysisMethods.HCA as hca
 import analysisMethods.LDA as lda
 import pandas as pd
 
-class ada:
+class ADA:
 
-    def __init__(self, filePath, filePath2 = None, method = ""):
+    def __init__(self, filePath, filePath2 = None, method = "", index_col =1):
         if method != "HCA":
             self.data = pp.readDataframeFromCSV(filePath, replaceNA = True)
         else:

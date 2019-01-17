@@ -2,7 +2,6 @@
 import pandas as pd
 import numpy as np
 import scipy.cluster.hierarchy as ch
-import scipy.spatial.distance as spad
 import utilities.preprocessor as pp
 
 

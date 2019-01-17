@@ -1,6 +1,5 @@
 # class for holding a Explanatory Factor Analysis (EFA) problem
 import pandas as pd
-import numpy as np
 import factor_analyzer as fa
 import analysisMethods.PCA as pca
 import utilities.preprocessor as pp

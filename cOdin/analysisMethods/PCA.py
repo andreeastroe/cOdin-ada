@@ -13,6 +13,7 @@ class PCA:
             X = values
         self.X = X
 
+        print("Reached PCA")
         self.R = np.corrcoef(self.X, rowvar=False)  # Compute the correlation matrix
         self.eigenVal, self.eigenVect = np.linalg.eigh(self.R)
 

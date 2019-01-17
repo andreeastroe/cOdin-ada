@@ -30,7 +30,7 @@ def replaceNANValuesDataFrame(values):
 # Reads data from a .csv file to a pandas.DataFrame
 def readDataframeFromCSV(filePath, replaceNA = False, index_col = 1):
     try:
-        data = pd.read_csv(filePath, index_col);
+        data = pd.read_csv(filePath, index_col)
         print(data)
         print(data[data.columns[1:]])
         obs_name = data.index   # stores the observations' names from the data
