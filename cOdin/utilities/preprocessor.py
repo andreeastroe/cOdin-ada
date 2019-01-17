@@ -133,7 +133,7 @@ def standardize(array):
                             parameters['stds'])
     return ary_newt[:, columns] # returns pandas.DataFrame, copy of the array or DataFrame with standardized columns
 
-# used in pca
+# Used in pca
 def inverse(data):
     if type(data) is pd.DataFrame:
         for col in data.columns:

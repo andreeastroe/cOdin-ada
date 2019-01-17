@@ -11,7 +11,7 @@ class ADA:
 
     def __init__(self, filePath, filePath2 = "", method = "", index_col =1):
         if method != "LDA":
-            self.data = pd.read_csv("Teritorial.csv", index_col=1)
+            self.data = pd.read_csv(filePath, index_col=1)
             # self.data = pp.readDataframeFromCSV(filePath, replaceNA = True)
         else:
             self.data = pp.readDataframeFromCSV(filePath, replaceNA=True, index_col = 0)
