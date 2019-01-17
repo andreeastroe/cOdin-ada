@@ -28,9 +28,9 @@ def replaceNANValuesDataFrame(values):
                 values[c] = values[c].fillna(mode[0])
 
 # Reads data from a .csv file to a pandas.DataFrame
-def readDataframeFromCSV(filePath, replaceNA = False):
+def readDataframeFromCSV(filePath, replaceNA = False, index_col = 1):
     try:
-        data = pd.read_csv(filePath, index_col=1);
+        data = pd.read_csv(filePath, index_col);
         print(data)
         print(data[data.columns[1:]])
         obs_name = data.index   # stores the observations' names from the data
@@ -176,7 +176,7 @@ def transpose(data):
     transposeValues = np.transpose(values)
     return transposeValues
 
-# Used in HCA
+# Used in HCA for building partition tables
 def partition(h, k):
     n = np.shape(h)[0] + 1
     g = np.arange(0, n)

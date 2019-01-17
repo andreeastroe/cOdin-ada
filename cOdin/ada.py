@@ -10,7 +10,10 @@ import pandas as pd
 class ada:
 
     def __init__(self, filePath, filePath2 = None, method = ""):
-        self.data = pp.readDataframeFromCSV(filePath, replaceNA = True)
+        if method != "HCA":
+            self.data = pp.readDataframeFromCSV(filePath, replaceNA = True)
+        else:
+            self.data = pp.readDataframeFromCSV(filePath, replaceNA=True, index_col = 0)
         if filePath2 is not None:
             self.data2 = pp.readDataframeFromCSV(filePath2, replaceNA=True)
         self.method = method
@@ -81,4 +84,7 @@ class ada:
                 vis.distribution(self.LDA.getX()[:, num], self.LDA.getSet2(), self.LDA.getLdaModel().classes_, axa=num)
         else: # self.method == "HCA"
             self.HCA = hca.HCA(self.data)
-            # do shit
+            vis.dendrogram(self.HCA.getObservationsClassification(), self.data.index, "Observations Classifications by " + self.HCA.obsMethod + " with metric braycurtis", threshold=self.HCA.getOptimalThreshold())
+            vis.dendrogram(self.HCA.getVariablesClassification(), self.HCA.columns, "Variables Classifications by " + self.HCA.varsMethod + " with metric braycurtis")
+            vis.dendrogram(self.HCA.getObservationsClassification(), self.data.index, "Partition with " + str(self.HCA.getNumberOfGroups()) + " groups", threshold=self.HCA.getThreshold())
+            pp.writeDataFrameToCSV(self.HCA.getPartitions(), "HCAPartitions.csv")
