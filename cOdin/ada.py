@@ -53,8 +53,13 @@ class ada:
             # Show the eigenvalues graphic
             vis.eighenValues(alpha)
         elif self.method == "EFA":
-            self.EFA = efa.EFA(self.data)
-            # do shit
+            self.EFA = efa.EFA(self.data, input("Enter significance threshold for scores: "))
+            pp.writeDataFrameToCSV(self.EFA.getLoadings(), "EFALoadings.csv")
+            pp.writeDataFrameToCSV(self.EFA.getRotatedLoadings(), "EFARotatedLoadings.csv")
+            pp.writeDataFrameToCSV(self.EFA.getEigenValues(), "EFAEigenvalues.csv")
+            vis.correlogram(self.EFA.KMO_test[0], " KMO Indices, KMO Total = "+ self.EFA.KMO_test[1])
+            vis.correlogram(self.EFA.getLoadings(), "Factorial Coefficients")
+            vis.correlogram(self.EFA.getRotatedLoadings(), "Quartimax Rotated Factorial Coefficients")
         elif self.method == "CCA":
             self.CCA = cca.CCA(self.data)
             pp.writeDataFrameToCSV(self.cca.set1, "Set1.csv")

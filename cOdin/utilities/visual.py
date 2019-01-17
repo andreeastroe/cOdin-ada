@@ -5,8 +5,7 @@ import seaborn as sb
 import numpy as np
 import scipy.cluster.hierarchy as hiclu
 
-# copiat
-def correlogram(t, title=None, valmin=-1, valmax=1):
+def correlogram2(t, title=None, valmin=-1, valmax=1):
     f = plt.figure(title, figsize=(8, 7))
     f1 = f.add_subplot(1, 1, 1)
     f1.set_title(title, fontsize=16, color='b', verticalalignment='bottom')
@@ -47,7 +46,7 @@ def correlogram(df, isCorrMatrix = True, title = "Correlogram", dropDuplicates =
                 square=True,
                 linewidth=.5, cbar_kws={"shrink": .5}, ax=ax)
 
-# copiat
+# Function to plot eigenvalues
 def eighenValues(alpha):
     plt.figure("Eigenvalues - Variance of the Components", figsize=(11, 7))
 
@@ -55,15 +54,15 @@ def eighenValues(alpha):
     # f1 = f.add_subplot(1, 1, 1, title="Eigenvalues - Variance of the Components",
     #                    xlabel="Components", ylabel="Eigenvalues")
 
-    plt.title("Eigenvalues - Variance of the Components")
+    plt.title("Eigenvalues")
     plt.xlabel("Components")
     plt.ylabel("Eigenvalues")
     plt.plot(alpha, 'bo-')
     plt.xticks([k for k in range(len(alpha))])
-    plt.axhline(1, color='r')
+    plt.axhline(1, color='c')
     plt.show()
 
-# copiat
+# Function to plot the Correlation Circles
 def corrCircles(R, k1, k2, title="The Correlation Circles"):
     plt.figure(title, figsize=(6, 6))
     plt.title(title, fontsize=16, color='b', verticalalignment='bottom')
@@ -71,16 +70,16 @@ def corrCircles(R, k1, k2, title="The Correlation Circles"):
     X = [np.cos(t) for t in T]
     Y = [np.sin(t) for t in T]
     plt.plot(X, Y)
-    plt.axhline(0, color='g')
-    plt.axvline(0, color='g')
-    plt.scatter(R.iloc[:, k1], R.iloc[:, k2], c='r')
-    plt.xlabel(R.columns[k1], fontsize=12, color='r', verticalalignment='top')
-    plt.ylabel(R.columns[k2], fontsize=12, color='r', verticalalignment='bottom')
+    plt.axhline(0, color='y')
+    plt.axvline(0, color='y')
+    plt.scatter(R.iloc[:, k1], R.iloc[:, k2], c='b')
+    plt.xlabel(R.columns[k1], fontsize=12, color='b', verticalalignment='top')
+    plt.ylabel(R.columns[k2], fontsize=12, color='b', verticalalignment='bottom')
     for i in range(len(R)):
         plt.text(R.iloc[i, k1], R.iloc[i, k2], R.index[i])
     plt.show()
 
-# copiat
+# Function to plot a scatter diagram of the discriminants
 def scatter_discriminant(z1, z2, g, labels, zg1, zg2, labels_g):
     f = plt.figure(figsize=(10, 7))
     assert isinstance(f, plt.Figure)
@@ -95,7 +94,7 @@ def scatter_discriminant(z1, z2, g, labels, zg1, zg2, labels_g):
         ax.text(zg1[i], zg2[i], labels_g[i], fontsize=26)
     plt.show()
 
-# copiat
+# Function to plot the distribution of values
 def distribution(z, y, g, axa):
     f = plt.figure(figsize=(10, 7))
     assert isinstance(f, plt.Figure)
@@ -106,7 +105,7 @@ def distribution(z, y, g, axa):
         sb.kdeplot(data=z[y == v], shade=True, ax=ax, label=v)
     plt.show()
 
-# copiat
+# Function to plot the variance of values
 def plot_variance(alpha, title='Variance plot'):
     n = len(alpha)
     f = plt.figure(title, figsize=(10, 7))
@@ -124,7 +123,6 @@ def plot_variance(alpha, title='Variance plot'):
     f1.axhline(alpha[j_Cattel + 1], c='m')
     return j_Cattel + 2, j_Kaiser
 
-# copiat
 def t_scatter(x, y, label=None, tx="", ty="", title='Scatterplot'):
     f = plt.figure(title, figsize=(10, 7))
     f1 = f.add_subplot(1, 1, 1)
@@ -137,8 +135,7 @@ def t_scatter(x, y, label=None, tx="", ty="", title='Scatterplot'):
         for i in range(n):
             f1.text(x[i], y[i], label[i])
 
-# copiat
-def t_scatter_s(x, y, x1, y1, label=None, label1=None, tx="", ty="", title='Scatterplot set suplimentar'):
+def t_scatter_s(x, y, x1, y1, label=None, label1=None, tx="", ty="", title='Scatterplot'):
     f = plt.figure(title, figsize=(10, 7))
     f1 = f.add_subplot(1, 1, 1)
     f1.set_title(title, fontsize=16, color='b', verticalalignment='bottom')
@@ -154,7 +151,6 @@ def t_scatter_s(x, y, x1, y1, label=None, label1=None, tx="", ty="", title='Scat
         for i in range(p):
             f1.text(x1[i], y1[i], label1[i], color='k')
 
-# copiat
 def scatter(x, y, label=None, tx="", ty="", title='Scatterplot'):
     f = plt.figure(title, figsize=(10, 7))
     f1 = f.add_subplot(1, 1, 1)
@@ -167,7 +163,6 @@ def scatter(x, y, label=None, tx="", ty="", title='Scatterplot'):
         for i in range(n):
             f1.text(x[i], y[i], label[i])
 
-# copiat
 def dendrogram(h, labels, title='Hierarchical classification', threshold=None):
     f = plt.figure(figsize=(12, 7))
     axis = f.add_subplot(1, 1, 1)

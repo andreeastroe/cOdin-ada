@@ -83,24 +83,20 @@ def writeDataFrameToCSV(data, filePath = "data.csv", cols = None, index = None):
         datadf.to_csv(path_or_buf=filePath)
         print("Data successfully saved to " + filePath)
 
-# not sure what it's used for
-def evaluate(C, alpha, R):
-    n = np.shape(C)[0]
-    # Compute scores
-    S = C / np.sqrt(alpha)
+# Used in EFA
+def evaluate(mat, correl, alpha):
+    n = np.shape(mat)[0] # number of rows
+    scores = mat / np.sqrt(alpha)  # compute scores
 
-    # Compute cosines
-    C2 = C * C
-    suml = np.sum(C2, axis=1)
-    q = np.transpose(np.transpose(C2) / suml)
+    matsq = mat * mat # compute cosines
+    add = np.sum(matsq, axis=1)
+    q = transpose(transpose(matsq) / add)
 
-    # Compute distributions
-    beta = C2 / (alpha * n)
+    beta = matsq / (alpha * n)  # compute distributions
 
-    # Compute commonalities
-    R2 = R * R
-    common = np.cumsum(R2, axis=1)
-    return S, q, beta, common
+    correlsq = correl * correl # compute commonalities
+    communalities = np.cumsum(correlsq, axis=1)
+    return scores, q, beta, communalities
 
 # Standardize the column (variable) values for a pandas.DataFrame - luat de la Vinte
 def standardize2(values):
@@ -179,3 +175,15 @@ def transpose(data):
         values = data
     transposeValues = np.transpose(values)
     return transposeValues
+
+# Used in HCA
+def partition(h, k):
+    n = np.shape(h)[0] + 1
+    g = np.arange(0, n)
+    for i in range(n - k):
+        k1 = h[i, 0]
+        k2 = h[i, 1]
+        g[g == k1] = n + i
+        g[g == k2] = n + i
+    clusters = ['c'+str(i) for i in pd.Categorical(g).codes]
+    return clusters
