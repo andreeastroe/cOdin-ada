@@ -59,8 +59,14 @@ class ada:
             self.CCA = cca.CCA(self.data)
             # do shit
         elif self.method == "LDA":
-            self.LDA = lda.LDA(self.data)
-            # do shit
+            self.LDA = lda.LDA(self.data, self.data2)
+            pp.writeDataFrameToCSV(self.LDA.getTableClassificationBErr(), "BClassificationError.csv")
+            pp.writeDataFrameToCSV(self.LDA.getTableClassificationB(), "BClassification.csv")
+            pp.writeDataFrameToCSV(self.LDA.getTableClassification(), "Classification.csv")
+            if self.LDA.getNumberOfDiscriminantAxes() > 1:
+                vis.scatter_discriminant(self.LDA.getX()[:, 0], self.LDA.getX()[:, 1], self.LDA.getSet2(), self.LDA.getSetX.index, self.LDA.getXc[:, 0], self.LDA.getXc[:, 1], self.LDA.getLdaModel().classes_)
+            for num in range(self.LDA.getNumberOfDiscriminantAxes()):
+                vis.distribution(self.LDA.getX()[:, num], self.LDA.getSet2(), self.LDA.getLdaModel().classes_, axa=num)
         else: # self.method == "HCA"
             self.HCA = hca.HCA(self.data)
             # do shit
